@@ -3,71 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahatma Gandi</title>
-    <style>
-    body{
-        background-color: rgb(181, 170, 170);
-        margin-left: 20%;
-        margin-right: 20%;
-        margin-bottom: 8%;
-        margin-top: 8%;
+    <title>Document</title>
+    <script> 
+    function alrt(){
+        alert("This is a alert box");
     }
-    #title{
-        text-align: center;
-        font-size: 9vh;
-        font-family: 'Times New Roman', Times, serif;
-    }
-    
-    #img{
-        align-items: center;
-        width: 550px;
-        height: 350px;
-        display:inline-block;
-        margin-left: 190px;
-    }
-    #highlight{
-        font-size: 2vh;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        margin: 20%  ;
-        margin-top: 0;
-        align-items: center;
-        margin-left: 210px;
-        margin-bottom: 150px;
-        padding-top: 10px;
-       
-    }
-
-    h1.title2{
-        text-align: center;
-        text-shadow: 5px 5px 10px rgb(0, 0, 0);
-        color: beige;
-    }
-    .tributebox{
+    function prmt(){
+        var n=prompt("This is promt box");
         
-        font-size: large;
-        padding-left:90px;
+    } 
+    function crfm(){
+        confirm("This is a confirm box");
+    }
+    function info(){
+        
+
+        return "helo how are u"
+    }
+    function add(a,b){
+        return a+b
     }
 
-    </style>
+
+    </script>
 </head>
-<body > 
-    <main id="main">
-        <h1 id="title">Mahatma Gandi</h1><br>
-        <div class="img">
-            <img src="https://wallpaperaccess.com/full/1392822.jpg" id="img" alt="Cant Load Image"><br><br>
-           <div id="highlight">Mohandas Karamchand Gandhi or Mahatma Gandhi was a renowned freedom activist and an authoritative or powerful political leader who played an essential role in India's struggle for Independence against British rule of India</div>
-        </div>
-        <div class="tributebox">
-            <h1 class="title2">About the Legend</h1><hr>
-            <p>
-                Mahatma Gandhi, also known as Mohandas Karamchand Gandhi, was a prominent leader in the Indian independence movement against British colonial rule.
-                Born on October 2, 1869, in Porbandar, India, he advocated for nonviolent civil disobedience as a means to achieve social and political change.
-                His philosophy of Satyagraha, or truth force, inspired millions and played a pivotal role in India's struggle for freedom.
-                Gandhi's dedication to justice, equality, and peace left an indelible mark on the world, making him an enduring symbol of nonviolence and moral leadership.
-            </p>
-        </div>
+<body onload="window.alert('This is what onload will do :)')">
+    <h1 >JavaScript</h1><hr>
+    <h2>Dialog Boxes</h2><br>
+    <input type="button" value="alert box" onclick="alrt()">
+    <input type="button" value="prompt box" onclick="prmt()">
+    <input type="button" value="confirm box" onclick="crfm()">
+    <p id="yk" ></p>
+    <script>
+    document.write(info(),"<br>");
+    document.write(add(4,9),"<br>");
+    var me={fn:"yadhu",ln:"krishna",class:"bca"};
+    document.write("my name is"+me.fn+me.ln+"i am in "+me.class);
     
-    </main>
-    
+    </script>
+    <hr>
+    <h3>Arrays </h3>
+    <p>Arrays can be created mainly in  three ways</p>
+    <list>
+        <ul>
+            <li>By using array literal</li>
+            
+            <li>By creating intance using new and adding elements </li>
+            <li>By using array constructor</li>
+        </ul>
+    </list>
+    <script>
+        var array1=["car","bike","iphone"];
+        for(i=0;i<array1.length;i++)
+        {
+            document.write(array1[i]+" ");
+        }
+        document.write("<br> ");
+        var array2=new Array();
+        array2[0]="car";
+        array2[1]="bike";
+        for(i=0;i<array2.length;i++)
+        {
+            document.write(array2[i]+" ");
+        }   
+        </script>
+        <hr>
+        <h1>Accessing Through object Model</h1>
+        <!-- DOM -->
+        <script>
+            function printer(){
+                var name=document.fname.tbbox.value;
+                alert("Hello Mr"+name); 
+            }
+        </script>
+        <form name="fname">
+            Enter your name : <input type="text" name="tbbox" >
+            <input type="button" value="Submit you name" onclick="printer()">
+        </form>
+        <hr>
+        <h3>write() v/s writeln</h3>
+        <code><u>writing by name twice in each methods</u></code><br>
+        <script>
+            document.write("yadhukrishna");
+            document.write("yadhukrishna");
+            document.write("<br>");
+            document.writeln("yadhukrishna");
+            document.writeln("yadhukrishna");
+        </script>
+        <h3>Inner Html Functionality</h3>
+        <script>
+            function btnclk(){
+                document.getElementById("change").innerHTML="<h1>YADHUKRISHNA</h1>";
+            }
+
+        </script>
+        <button  onclick="btnclk()">Unwrap Me</button>
+        <h5 id="change">YADHUKRISHNX</h5>
+        <hr><marquee  >Refer code for complete understanding </marquee><hr>
+        <h2>Event Handling</h2>
+        <!-- Handling mouse -->
+        <script>
+            function event1(){
+                confirm("This is a onclick event ! ");
+            }
+            function overevent(){
+                alert("This is what onmouseover can do");
+            }
+            function focusevent(){
+                document.getElementById("pid").style.background="yellow";
+            }
+            function keyevnt(){
+                alert("pressed a key");
+            }
+            function keyevnt2(){
+                alert("release a key");
+            }
+        </script>
+        <input type="button" value="Click to see what /// onclick /// do" onclick="event1()" >
+        <p onmouseover="overevent()">Move cursor here to see what /// onmouseover /// do</p><br>
+       
+            <input id="pid" type="button" value="onfocus" onfocus="focusevent()">
+        <br><p>This is what onkeydown do! ></p><input type="text" name="" id="nid" onkeydown="keyevnt()" >
+        <!-- Window object-->
+        <Br><hr>
+            <br>
+            <h3>Window opening and closing</h3>
+            <script>
+                function open1(){
+                    mywindow=window.open("/home/yadhuadmin/Desktop/php/form.html","_blank","width=500 height=500");
+                }
+                function close1(){
+                    mywindow.close();
+                }
+            </script>
+            <input type="button" value="Open mywindow" onclick="open1()">
+            <input type="button" value="Close mywindow" onclick="close1()">
+        <br><hr>
+        <h3>Navigator object</h3>
+        <script>
+            document.write(navigator.appName);
+            document.write(navigator.appCodeName);
+        </script>
+
+        
 </body>
 </html>
